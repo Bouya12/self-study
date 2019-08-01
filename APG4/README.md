@@ -1,0 +1,5 @@
+﻿# AtCoder Programming Guide for beginners (APG4b)
+・競技プログラミングコンテストサイト「AtCorder」にて初心者向けに書かれたc++による学習サイト
+・基礎的なプログラミングから競技プログラミングに関する知識を紹介しているため勉強のため利用
+・各レッスンに従い作成したプログラムを保存していく
+[APG4b](https://atcoder.jp/contests/apg4b)
