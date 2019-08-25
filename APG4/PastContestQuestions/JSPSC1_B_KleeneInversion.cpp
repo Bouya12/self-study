@@ -8,24 +8,44 @@ int main() {
   cin >> n >> k;
 
   vector<int> a(n);
-  for (int i = 0; i < n; i++) {cin >> a.at(i);}
+  for (int i = 0; i < n; i++) {
+    cin >> a.at(i);
+  }
 
-  int total = 0;
-  int cnt = 0;
+  long long int p = 0;
   for (int i = 0; i < n; i++) {
     for (int j = i + 1; j < n; j++) {
       if (a.at(i) > a.at(j)) {
-        total++;
+        p++;
       }
     }
   }
 
-  long long int b_total = 0;
-  long long int c, d;
-  for (int i = 0; i < k; i++) {
-    c = k - i;
-    d = total * c;
-    b_total += total * (k - i);
+  long long int q = 0;
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      if (a.at(i) > a.at(j)) {
+        q++;
+      }
+    }
   }
-  cout << b_total % 999999993 << endl;
+
+  long long int mod = pow(10, 9) + 7;
+
+  long long int p_total = 0;
+  p_total = p * k;
+  p_total %= mod;
+
+  long long int q_total = 0;
+  q_total = k - 1;
+  q_total *= k;
+  q_total /= 2;
+  q_total %= mod;
+  q_total *= q;
+
+  long long int total;
+  total = p_total + q_total;
+
+  total %= mod;
+  cout << total << endl;
 }
