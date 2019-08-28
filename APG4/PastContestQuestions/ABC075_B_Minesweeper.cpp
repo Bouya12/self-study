@@ -4,8 +4,8 @@
 using namespace std;
  
 int main() {
-  vector<int> dx = {-1, -1, -1, 0, 0, 1, 1, 1};
-  vector<int> dy = {-1, 0, 1, -1, 1, -1, 0, 1};
+  int dx[] = {-1, -1, -1, 0, 0, 1, 1, 1};
+  int dy[] = {-1, 0, 1, -1, 1, -1, 0, 1};
 
   int h, w;
   cin >> h >> w;
@@ -18,26 +18,27 @@ int main() {
   vector<string> ans(h);
   for (int i = 0; i < h; i++) {
     for (int j = 0; j < w; j++) {
-      int cnt = 0;
-      for (int k = 0; k < 8; k++) {
-        if (k + dx.at(k) >= 0 && k + dx.at(k) < w 
-            && k + dy.at(k) >= 0 && k + dy.at(k) < h
-            && s.at(i).at(j) == '#') {
-          cnt++;
-        }
 
-        string mine;
-        if (s.at(i).at(j) == '#') {
-          mine = '#';
-        } else {
-          mine = '0' + cnt;
+      string mine;
+      if (s.at(i).at(j) == '#') {
+        mine = '#';
+      } else {
+        int cnt = 0;
+        for (int k = 0; k < 8; k++) {
+          if (j + dx[k] >= 0 && j + dx[k] < w 
+              && i + dy[k] >= 0 && i + dy[k] < h) {
+            if (s.at(i + dy[k]).at(j + dx[k]) == '#') {
+              cnt++;
+            }
+          }
         }
+        mine = '0' + cnt;
+      }
 
-        if (ans.at(i) == "") {
-          ans.at(i) = mine;
-        } else {
-          ans.at(i) + mine;
-        }
+      if (ans.at(i) == "") {
+        ans.at(i) = mine;
+      } else {
+        ans.at(i) += mine;
       }
     }
   }
