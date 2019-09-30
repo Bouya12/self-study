@@ -3,6 +3,7 @@
 using namespace std;
 
 int cnt;
+vector<int> G;
 
 void insertionSort(vector<int> &A, int n, int g) {
   for (int i = g; i < n; i++) {
@@ -18,18 +19,19 @@ void insertionSort(vector<int> &A, int n, int g) {
   }
 }
 
-void shellSort(vector<int> A, int n) {
+void shellSort(vector<int> &A, int n) {
   cnt = 0;
   
   // 数列G = {1, 4, 12, 40, 121, 364, 1093, ...} を生成
-  vector<int> G;
   int h = 1;
   while (h <= n) {
     G.push_back(h);
     h = 3 * h + 1;
   }
   int m = G.size();
-  rep (i, m) insertionSort(A, n, G.at(i));
+  for (int i = m - 1; i >= 0; i--) {
+    insertionSort(A, n, G.at(i));
+  }
 }
 
 int main() {
@@ -39,7 +41,16 @@ int main() {
   vector<int> A(n);
   rep (i, n) cin >> A.at(i);
 
-  // シェルソートを使った処理を記述
+  shellSort(A, n);
+
+  cout << G.size() << endl;
+  for (int i = G.size() - 1; i >= 0; i--) {
+    cout << G.at(i);
+    if (i > 0) cout << " ";
+  }
+  cout << endl;
+  cout << cnt << endl;
+  rep (i, n) cout << A.at(i) << endl;
 
   return 0;
 }
