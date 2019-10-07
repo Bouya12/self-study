@@ -15,29 +15,25 @@ int pop() {
 
 int main() {
   string in;
-  getline(cin, in);
-
-  string s = "";
-  for (int i = 0; i < in.size(); i += 2) s += in.at(i);
 
   int a, b;
   top = 0;
 
-  for (int i = 0; i < s.size(); i++) {
-    if (s[i] == '+') {
+  while (cin >> in) {
+    if (in[0] == '+') {
       a = pop();
       b = pop();
       push(a + b);
-    } else if (s[i] == '-') {
+    } else if (in[0] == '-') {
       b = pop();
       a = pop();
       push(a - b);
-    } else if (s[i] == '*') {
+    } else if (in[0] == '*') {
       a = pop();
       b = pop();
       push(a * b);
     } else {
-      push(s[i] - '0');
+      push(atoi(in.c_str()));
     }
   }
 
