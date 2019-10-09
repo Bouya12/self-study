@@ -2,7 +2,11 @@
 #define rep(i, n) for(int i = 0; i < (int)(n); i++)
 #define LEN 100005
 using namespace std;
-using proc = pair<string, int>;
+
+struct proc {
+  string p;
+  int t;
+};
 
 vector<proc> Q(LEN);
 int head = 1, tail = 1;
@@ -24,20 +28,20 @@ int main() {
   int n, q;
   cin >> n >> q;
 
-  for (int i = 1; i <= n; i++) cin >> Q[i].first >> Q[i].second;
+  for (int i = 1; i <= n; i++) cin >> Q[i].p >> Q[i].t;
   tail = n + 1;
 
   proc u;
   int exe_time = 0, elaps = 0;
   while (head != tail) {
     u = Dequeue();
-    exe_time = min(q, u.second);
-    u.second -= exe_time;
+    exe_time = min(q, u.t);
+    u.t -= exe_time;
     elaps += exe_time;
-    if (u.second > 0) {
+    if (u.t > 0) {
       Enqueue(u);
     } else {
-      cout << u.first << " " << elaps << endl;
+      cout << u.p << " " << elaps << endl;
     }
   }
 
