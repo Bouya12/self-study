@@ -8,7 +8,7 @@ vector<proc> Q(LEN);
 int head = 1, tail = 1;
 
 // キューに値を追加
-void Inqueue(proc process) {
+void Enqueue(proc process) {
   Q[tail] = process;
   tail = (tail + 1) % LEN;
 }
@@ -24,17 +24,22 @@ int main() {
   int n, q;
   cin >> n >> q;
 
-  vector<proc> process(n);
-  rep (i, n) cin >> process[i].first >> process[i].second;
-  tail = n;
+  for (int i = 1; i <= n; i++) cin >> Q[i].first >> Q[i].second;
+  tail = n + 1;
 
   proc u;
-  int exe_time;
+  int exe_time = 0, elaps = 0;
   while (head != tail) {
-    // シミュレーション
+    u = Dequeue();
+    exe_time = min(q, u.second);
+    u.second -= exe_time;
+    elaps += exe_time;
+    if (u.second > 0) {
+      Enqueue(u);
+    } else {
+      cout << u.first << " " << elaps << endl;
+    }
   }
 
-  int ans;
-  cout << ans << endl;
   return 0;
 }
