@@ -1,5 +1,6 @@
 import * as bodyParser from "body-parser";
 import * as Express from "express";
+import { Task } from "./Task";
 
 const app = Express();
 app.use(bodyParser.json());
@@ -9,12 +10,6 @@ app.get("/", (req, res) => {
 });
 
 export { app };
-
-interface Task {
-  category: string;
-  title: string;
-  done: boolean;
-}
 
 const tasks: Task[] = [
   {
@@ -30,7 +25,7 @@ app.get("/tasks", (req, res) => {
 
 app.post("/tasks", (req, res) => {
   const received = req.body;
-  if ("category" in received && "title" in received && "done" in received) {
+  if (isTaskItemsIncluded(received)) {
     const newTask: Task = {
       category: received.category,
       title: received.title,
@@ -43,3 +38,7 @@ app.post("/tasks", (req, res) => {
     res.status(400).send("Parameters are invalid.");
   }
 });
+
+function isTaskItemsIncluded(received: any) {
+  return "category" in received && "title" in received && "done" in received;
+}
