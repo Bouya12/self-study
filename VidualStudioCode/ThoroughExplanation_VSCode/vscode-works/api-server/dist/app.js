@@ -20,7 +20,7 @@ app.get("/tasks", (req, res) => {
 });
 app.post("/tasks", (req, res) => {
     const received = req.body;
-    if ("category" in received && "title" in received && "done" in received) {
+    if (isTaskItemsIncluded(received)) {
         const newTask = {
             category: received.category,
             title: received.title,
@@ -34,4 +34,7 @@ app.post("/tasks", (req, res) => {
         res.status(400).send("Parameters are invalid.");
     }
 });
+function isTaskItemsIncluded(received) {
+    return "category" in received && "title" in received && "done" in received;
+}
 //# sourceMappingURL=app.js.map
