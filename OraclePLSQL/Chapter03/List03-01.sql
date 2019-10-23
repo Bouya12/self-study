@@ -1,4 +1,4 @@
-DECLARE
+﻿DECLARE
   var NUMBER := 10;
 BEGIN
   IF var = 10 THEN
