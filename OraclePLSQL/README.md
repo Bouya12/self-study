@@ -8,6 +8,10 @@
 * 基本的には SQL*Plusを利用して学習
 * PL/SQLが長くなる場合にはSQL Developerを利用
 
+## 備考
+* VSCodeは文字のエンコードが標準でUTF-8だが、Sql*PlusでUTF-8を使うと文字化けする
+* 対応として、サンプルで出力している日本語文は英語文に変更して保存
+
 ## 実習環境構築
 * [【オラクル認定資格試験対策書】ORACLE MASTER Bronze［12c SQL基礎］（試験番号：1Z0-061）完全詳解＋精選問題集](https://www.sbcr.jp/product/4797375411/)のサンプルプログラムを流用してスキーマを作成
 * [【ダウンロード】プロとしてのOracle PL/SQL入門　第３版](https://www.sbcr.jp/support/11867/)よりダウンロードしたテーブル等のサンプルを作成
