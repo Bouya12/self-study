@@ -43,6 +43,6 @@ public class Cleric {
   }
 
   Cleric (String name) {
-    this(name, Cleric.maxHp, Cleric.maxMp);
+    this(name, Cleric.maxHp);
   }
 }
