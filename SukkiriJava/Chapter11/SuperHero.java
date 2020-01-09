@@ -8,4 +8,8 @@ public class SuperHero extends Hero {
     this.flying = false;
     System.out.println("’…’n‚µ‚½I");
   }
+
+  public void run() {
+    System.out.println("“P‘Ş‚µ‚½");
+  }
 }
