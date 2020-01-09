@@ -12,4 +12,11 @@ public class SuperHero extends Hero {
   public void run() {
     System.out.println("“P‘Þ‚µ‚½");
   }
+
+  public void attack(Matango m) {
+    super.attack(m);
+    if (this.flying) {
+      super.attack(m);
+    }
+  }
 }
