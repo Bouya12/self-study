@@ -1,0 +1,8 @@
+「docker-compose up」 実行時に下記メッセージが表示されパスワードが見えない
+master    | touch: cannot touch '/var/jenkins_home/copy_reference_file.log': Permission denied
+master    | Can not write to /var/jenkins_home/copy_reference_file.log. Wrong volume permissions?
+
+・指定したパスに対する操作の権限が不足しているのが原因のようなので
+　対象とするパスを下記の通り修正することでエラー解消
+　【/var/jenkins_home】　→　【/var/lib/jenkins_home】
+参考サイト：http://heppoen.seesaa.net/article/463347635.html
