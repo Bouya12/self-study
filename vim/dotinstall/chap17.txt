@@ -1,0 +1,5 @@
+c/d/y : change (delete & insert)
+
+i/a : 中身か全体か
+
+t/"/)/]: tag

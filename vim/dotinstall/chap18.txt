@@ -1,0 +1,7 @@
+set number : 行数を表示
+set nonumber : 行数を非表示
+syntax on : シンタックスハイライトを有効化
+syntax off : シンタックスハイライトを無効化
+set tabstop=(空白数) : タブによるスペースを指定の数に変更
+set ignorecase : 検索時に小文字・大文字の区別をなくす
+set noignorecase : 検索時に小文字・大文字を区別する

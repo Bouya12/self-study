@@ -1,0 +1,2 @@
+undo: u
+redo: CTRL+r
