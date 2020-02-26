@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    function checkEven() {
+      var v = document.getElementById("number").value;
+      var r = document.getElementById("result");
+      if (isNaN(v)) {
+        r.textContent = v + "は数字では有りません";
+      } else {
+        r.textContent = v + "は数字です";
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <input id="number" />
+  <button onclick="checkEven()">入力判定</button>
+  <p id="result"></p>
+</body>
+
+</html>
