@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    let context;
+    function init() {
+      var canvas = document.getElementById("canvas");
+      context = canvas.getContext("2d");
+      context.strokeStyle = "#FF0000";
+      context.fillStyle = "#00FFFF";
+      context.lineWidth = 5;
+
+      context.fillRect(100, 30, 80, 50);
+      context.strokeRect(200, 30, 80, 50);
+      context.fillRect(300, 30, 80, 50);
+      context.clearRect(320, 50, 50, 20);
+    }
+  </script>
+</head>
+
+<body onload="init()">
+  <canvas id="canvas" width="600" height="400"></canvas>
+</body>
+
+</html>
