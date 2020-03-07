@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>マウスイベントサンプル</title>
+  <style>
+    #outerBox {
+      background: thistle;
+      margin: 50px;
+      padding: 50px;
+    }
+
+    #innerBox {
+      padding: 50px;
+      background: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="outerBox">
+    <p id="innerBox">ここはボックス内の段落です</p>
+  </div>
+  <button type="button" onclick="removeMouseInOutEvent()">マウス出入イベントの削除</button>
+  <ul id="msgList"></ul>
+  <script src="mouseEvent.js"></script>
+</body>
+
+</html>
