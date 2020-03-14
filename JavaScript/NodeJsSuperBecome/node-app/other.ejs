@@ -8,12 +8,17 @@
 </head>
 
 <body>
-
-  <head>
+  <header>
     <h1><%=title %></h1>
-  </head>
+  </header>
   <div role="main">
-    <p><%=content %></p>
+    <p>
+      <table>
+        <% for(let key in data) { %>
+        <%- include("data_item", {key:key, val:data[key]}) %>
+        <% } %>
+      </table>
+    </p>
   </div>
 </body>
 
