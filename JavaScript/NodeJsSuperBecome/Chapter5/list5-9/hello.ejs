@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <title><%= title %> </title>
+  <script>
+    $(document).ready(() => {
+      $("#btn").click(() => {
+        const n = $("#num").val();
+        $.getJSON("/ajax?id=" + n, (json) => {
+          const msg = "<table>" +
+            "<tr> <th>名前</th> <td>" + json.name + "</td> </tr>" +
+            "<tr> <th>年齢</th> <td>" + json.age + "</td> </tr>" +
+            "<tr> <th>メール</th> <td>" + json.mail + "</td> </tr>" +
+          "</table>";
+          $("#msg").html(msg);
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1><%= title %> </h1>
+  </header>
+  <div role="main">
+    <p id="msg"><%- content %> </p>
+    <input type="text" name="num" id="num">
+    <input type="button" value="GET!" id="btn">
+  </div>
+</body>
+
+</html>
