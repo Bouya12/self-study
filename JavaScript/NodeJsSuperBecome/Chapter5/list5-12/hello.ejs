@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title><%= title %> </title>
+</head>
+
+<body>
+  <header>
+    <h1><%= title %> </h1>
+  </header>
+  <div role="main">
+    <% if (content !== null) { %>
+      <ol>
+        <% for(const obj of content) { %>
+          <li>
+            <a href="<%= obj.link %> "><%= obj.title %> </a>
+          </li>
+        <% } %>
+      </ol>
+    <% } %>
+  </div>
+</body>
+
+</html>
