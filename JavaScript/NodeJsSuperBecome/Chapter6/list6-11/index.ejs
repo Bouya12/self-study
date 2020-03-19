@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title><%= title %> </title>
+</head>
+
+<body>
+  <header>
+    <h1><%= title %> </h1>
+  </header>
+  <div role="main">
+    <table>
+      <% for(const c of content) { %>
+      <tr>
+        <% const obj = c.attributes; %>
+        <th><%= obj.id %> </th>
+        <td><%= obj.name %> </td>
+        <td><%= obj.mail %> </td>
+        <td><%= obj.age %> </td>
+      </tr>
+      <% } %>
+    </table>
+  </div>
+  <div>
+    <span>
+      <a href="/hello/1">&lt;&lt; First</a>
+    </span>
+    <span>
+      <a href="/hello/<%= pagination.page - 1 %>">&lt;&lt; Prev</a>
+    </span>
+    <span>
+      <a href="/hello/<%= pagination.page + 1 %>">Next &gt;&gt;</a>
+    </span>
+    <span>
+      <a href="/hello/<%= pagination.pageCount %>">Last &gt;&gt;</a>
+    </span>
+  </div>
+</body>
+
+</html>
