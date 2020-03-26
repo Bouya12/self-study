@@ -5,6 +5,12 @@
 - Ruby の基礎知識
 - Ruby on Rails の基礎知識
 
+## 備考
+
+- プログラムはrubocopのフォーマットに従う
+- 環境構築は以下のサイトを参考に実施
+  - [VSCodeで最低限のRuby環境構築 - 設定編](https://impsbl.hatenablog.jp/entry/RubyInVSCode1)
+
 ## 参考書籍
 
 - タイトル：スラスラ読める Ruby ふりがなプログラミング
