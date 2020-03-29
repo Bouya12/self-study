@@ -8,6 +8,7 @@
 
 - 既知のプログラムは作成しない
 - プログラムは[phpcs](https://pear.php.net/package/PHP_CodeSniffer)のフォーマットに従う
+- htmlファイルはEMETの様式に従う
 
 ## 参考書籍
 
