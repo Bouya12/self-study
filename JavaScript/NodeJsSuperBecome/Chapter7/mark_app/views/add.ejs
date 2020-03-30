@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <header>
+    <h1><%= title %></h1>
+  </header>
+  <div role="main">
+    <form action="/add" method="post">
+      <table>
+        <tr>
+          <th>TITLE</th>
+        </tr>
+        <tr>
+          <td><input type="text" name="title" size="80"></td>
+        </tr>
+        <tr>
+          <th>COMMENT</th>
+        </tr>
+        <tr>
+          <td>
+            <textarea name="content" cols="80" rows="25"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <th><input type="submit" value="送信"></th>
+        </tr>
+      </table>
+    </form>
+    <p>
+      <a href="/">&lt;&lt; Top へ戻る</a>
+    </p>
+  </div>
+</body>
+
+</html>
