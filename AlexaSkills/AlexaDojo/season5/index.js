@@ -24,7 +24,7 @@ const QuizeIntentHandler = {
                 || Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.YesIntent');
     },
     handle(handlerInput) {
-        const speakOutput = '問題です。かけたり、たったり、つぶしたりするものって、なーんだ？';
+        const speakOutput = '問題です<break time="2s"/>かけたり、たったり、つぶしたりするものって、なーんだ？';
         const reprompt = 'まだわからないかな？もう一度。';
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -45,7 +45,7 @@ const AnswerIntentHandler = {
         if (answer === '時間') {
             speakOutput = '正解です。やったね。';
         } else {
-            speakOutput = '残念、答えは。時間です';
+            speakOutput = '残念、答えは<break time="1s"/>時間です';
         }
         return handlerInput.responseBuilder
             .speak(speakOutput)
