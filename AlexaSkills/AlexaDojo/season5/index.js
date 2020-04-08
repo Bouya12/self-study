@@ -26,8 +26,11 @@ const QuizeIntentHandler = {
     handle(handlerInput) {
         const questionUrl = Util.getS3PreSignedUrl("Media/question_48k.mp3").replace(/&/g,'&amp;');
         const countdownUrl = 'soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_countdown_loop_32s_full_01';
-        const speakOutput = `問題です<audio src="${questionUrl}"/>かけたり、たったり、つぶしたりするものって、なーんだ？
+        const speakOutput = `<voice name="Takumi">
+                            問題です
+                            <audio src="${questionUrl}"/>かけたり、たったり、つぶしたりするものって、なーんだ？
                             「アレクサ」と言ってから答えてね。
+                            </voice>
                             <audio src="${countdownUrl}"/>`;
         const reprompt = 'まだわからないかな？もう一度。';
         return handlerInput.responseBuilder
