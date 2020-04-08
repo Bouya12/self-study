@@ -24,7 +24,8 @@ const QuizeIntentHandler = {
                 || Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.YesIntent');
     },
     handle(handlerInput) {
-        const speakOutput = '問題です<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_intro_01"/>かけたり、たったり、つぶしたりするものって、なーんだ？';
+        const audioUrl = Util.getS3PreSignedUrl("Media/question_48k.mp3").replace(/&/g,'&amp;');
+        const speakOutput = `問題です<audio src="${audioUrl}"/>かけたり、たったり、つぶしたりするものって、なーんだ？`;
         const reprompt = 'まだわからないかな？もう一度。';
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -43,9 +44,11 @@ const AnswerIntentHandler = {
         
         let speakOutput;
         if (answer === '時間') {
-            speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_positive_response_01"/>正解です。やったね。';
+            const audioUrl = Util.getS3PreSignedUrl("Media/correct_48k.mp3").replace(/&/g,'&amp;');
+            speakOutput = `<audio src="${audioUrl}"/>正解です。やったね。`;
         } else {
-            speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_negative_response_01"/>残念、答えは<break time="1s"/>時間です';
+            const audioUrl = Util.getS3PreSignedUrl("Media/incorrect_48k.mp3").replace(/&/g,'&amp;');
+            speakOutput = `<audio src="${audioUrl}"/>残念、答えは<break time="1s"/>時間です`;
         }
         return handlerInput.responseBuilder
             .speak(speakOutput)
