@@ -24,8 +24,11 @@ const QuizeIntentHandler = {
                 || Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.YesIntent');
     },
     handle(handlerInput) {
-        const audioUrl = Util.getS3PreSignedUrl("Media/question_48k.mp3").replace(/&/g,'&amp;');
-        const speakOutput = `問題です<audio src="${audioUrl}"/>かけたり、たったり、つぶしたりするものって、なーんだ？`;
+        const questionUrl = Util.getS3PreSignedUrl("Media/question_48k.mp3").replace(/&/g,'&amp;');
+        const countdownUrl = 'soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_countdown_loop_32s_full_01';
+        const speakOutput = `問題です<audio src="${questionUrl}"/>かけたり、たったり、つぶしたりするものって、なーんだ？
+                            「アレクサ」と言ってから答えてね。
+                            <audio src="${countdownUrl}"/>`;
         const reprompt = 'まだわからないかな？もう一度。';
         return handlerInput.responseBuilder
             .speak(speakOutput)
