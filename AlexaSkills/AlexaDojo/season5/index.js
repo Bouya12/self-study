@@ -45,7 +45,7 @@ const AnswerIntentHandler = {
         let speakOutput;
         if (answer === '時間') {
             const audioUrl = Util.getS3PreSignedUrl("Media/correct_48k.mp3").replace(/&/g,'&amp;');
-            speakOutput = `<audio src="${audioUrl}"/>正解です。やったね。`;
+            speakOutput = `<audio src="${audioUrl}"/>正解です。 <say-as interpret-as="interjection">やった</say-as> `;
         } else {
             const audioUrl = Util.getS3PreSignedUrl("Media/incorrect_48k.mp3").replace(/&/g,'&amp;');
             speakOutput = `<audio src="${audioUrl}"/>残念、答えは<break time="1s"/>時間です`;
