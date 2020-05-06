@@ -8,20 +8,24 @@ const LaunchRequestHandler = {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
     handle(handlerInput) {
-        const speakOutput = 'こんにちは、ケークウォークへようこそ。起動してくれてありがとうございます。さようなら。';
+        const speakOutput = 'こんにちは、ケークウォークへようこそ。お誕生日を教えて下さい。';
+        const repromptOutput = '私は二千十四年十一月六日に生まれました。あなたの誕生日はいつですか？';
         return handlerInput.responseBuilder
             .speak(speakOutput)
-            .reprompt(speakOutput)
+            .reprompt(repromptOutput)
             .getResponse();
     }
 };
-const HelloWorldIntentHandler = {
+const CaptureBirthdayIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'HelloWorldIntent';
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'CaptureBirthdayIntent';
     },
     handle(handlerInput) {
-        const speakOutput = 'Hello World!';
+        const year = Alexa.getSlotValue(handlerInput.requestEnvelope, 'year');
+        const month = Alexa.getSlotValue(handlerInput.requestEnvelope, 'month');
+        const day = Alexa.getSlotValue(handlerInput.requestEnvelope, 'day');
+        const speakOutput = `ありがとうございます。誕生日は${year}年${month}月${day}日ですね。`;
         return handlerInput.responseBuilder
             .speak(speakOutput)
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
@@ -108,7 +112,7 @@ const ErrorHandler = {
 exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
-        HelloWorldIntentHandler,
+        CaptureBirthdayIntentHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         SessionEndedRequestHandler,
