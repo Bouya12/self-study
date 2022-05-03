@@ -1,0 +1,7 @@
+D:\self-study\C_Sharp\LearnCSharp1week\Sample101\Sample101\bin\Debug\Sample101.exe.config
+D:\self-study\C_Sharp\LearnCSharp1week\Sample101\Sample101\bin\Debug\Sample101.exe
+D:\self-study\C_Sharp\LearnCSharp1week\Sample101\Sample101\bin\Debug\Sample101.pdb
+D:\self-study\C_Sharp\LearnCSharp1week\Sample101\Sample101\obj\Debug\Sample101.csproj.AssemblyReference.cache
+D:\self-study\C_Sharp\LearnCSharp1week\Sample101\Sample101\obj\Debug\Sample101.csproj.CoreCompileInputs.cache
+D:\self-study\C_Sharp\LearnCSharp1week\Sample101\Sample101\obj\Debug\Sample101.exe
+D:\self-study\C_Sharp\LearnCSharp1week\Sample101\Sample101\obj\Debug\Sample101.pdb

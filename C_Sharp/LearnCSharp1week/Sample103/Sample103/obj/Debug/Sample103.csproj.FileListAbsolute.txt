@@ -1,0 +1,6 @@
+D:\self-study\C_Sharp\LearnCSharp1week\Sample103\Sample103\bin\Debug\Sample103.exe.config
+D:\self-study\C_Sharp\LearnCSharp1week\Sample103\Sample103\bin\Debug\Sample103.exe
+D:\self-study\C_Sharp\LearnCSharp1week\Sample103\Sample103\bin\Debug\Sample103.pdb
+D:\self-study\C_Sharp\LearnCSharp1week\Sample103\Sample103\obj\Debug\Sample103.csproj.CoreCompileInputs.cache
+D:\self-study\C_Sharp\LearnCSharp1week\Sample103\Sample103\obj\Debug\Sample103.exe
+D:\self-study\C_Sharp\LearnCSharp1week\Sample103\Sample103\obj\Debug\Sample103.pdb
